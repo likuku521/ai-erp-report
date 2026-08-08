@@ -413,14 +413,14 @@ td.hl{color:var(--gold-bright);font-weight:600}
   <p class="lead">「无人会计」从理念变成可度量的进度条——自动化率第一次成为<b>可看、可管、可排名</b>的经营指标。</p>
   <div class="kpis">
     <div class="kpi"><div class="n">3 大</div><div class="l">度量卡片：记账进度 / 自动化率趋势 / 排行</div></div>
-    <div class="kpi"><div class="n">前 5 期</div><div class="l">自动化率趋势对比，可追溯</div></div>
-    <div class="kpi"><div class="n">3 类</div><div class="l">自动化凭证来源：机制凭证 / 期末调汇 / 结转损益</div></div>
+    <div class="kpi"><div class="n" data-count="7">0</div><div class="l">类自动化凭证来源（含凭证摊销 / 自动转账 / 余额结转）</div></div>
+    <div class="kpi"><div class="n">2 公式</div><div class="l">进度比例 + 自动化率双口径，排除作废凭证</div></div>
   </div>
   <div class="lr" style="margin-top:12px">
     <div class="left">
-      <div class="point"><h4>记账进度分析</h4><p>按账簿查看各业务系统记账进度、未生成凭证单据数，可批量执行生成</p></div>
-      <div class="point"><h4>自动化率排行</h4><p>所有账簿自动化率 / 总数 / 自动化数 / 手工数自动排名，排除作废凭证</p></div>
-      <div class="point"><h4>关键洞察</h4><p>自动化率 = 自动生成凭证数 ÷ 总凭证数——它第一次把「AI 干活的比例」变成了可追踪的 KPI</p></div>
+      <div class="point"><h4>记账进度分析 · 怎么算</h4><p>进度比例 = 已生成凭证单据数 ÷（已生成 + 未生成）——按账簿 × 业务系统 × 期间逐层下钻，点击数字直接联查「凭证生成查询」，批量执行生成</p></div>
+      <div class="point"><h4>自动化率排行 · 看什么</h4><p>按期间统计所有账簿的自动化率并排名——凭证总数 / 自动化凭证数 / 手工凭证数三项并排，一眼看出哪个账簿最「自动」</p></div>
+      <div class="point"><h4>关键洞察</h4><p>自动化率第一次成为「可看、可管、可排名」的经营指标——客户第一问由此而来</p></div>
     </div>
     <div class="fig" style="display:flex;flex-direction:column;gap:6px;padding:10px 13px">
       <h5>凭证自动化率 · 前 5 期趋势 <span class="val">示意</span></h5>
@@ -429,8 +429,11 @@ td.hl{color:var(--gold-bright);font-weight:600}
       <div id="ch-s4-ring" data-anim style="height:76px"></div>
     </div>
   </div>
-  <div class="concl gold">记账环的 AI 化 = 从「人记」到「系统记 + 人看指标」——走到感知层，开始向理解层迈进</div>
-  <div class="src">来源：金蝶社区 · 智能会计平台首页</div>
+  <div class="bento" style="flex:0 0 auto;grid-auto-rows:auto;margin-top:8px">
+    <div class="bcard span-12" style="padding:8px 12px"><div class="ico">🧮</div><h4>自动化凭证 7 类来源（排除作废）</h4><p>机制凭证 / 期末调汇 / 结转损益 / 凭证摊销 / 自动转账 / 凭证转存 / 余额结转 —— 自动化率 = 当月自动生成凭证量 ÷ 当月累计凭证量</p></div>
+  </div>
+  <div class="concl gold">记账环的 AI 化 = 从「人记」到「系统记 + 人看指标」——度量革命让「AI 干活比例」首次可追踪</div>
+  <div class="src">来源：金蝶社区 · 智能会计平台首页（记账进度分析 / 自动化率排行）</div>
 </section>
 
 <!-- S5 审核环 · 费用审核智能体 -->
@@ -441,9 +444,22 @@ td.hl{color:var(--gold-bright);font-weight:600}
   <div class="kpis">
     <div class="kpi"><div class="n" data-count="20" data-suffix=" 分钟">0</div><div class="l">上传制度 → 审核规则初始化配置</div></div>
     <div class="kpi"><div class="n" data-count="4" data-suffix=" 维">0</div><div class="l">合规性 / 合理性 / 风险性 / 准确性 逐条审核</div></div>
-    <div class="kpi"><div class="n" data-count="100" data-suffix="%">0</div><div class="l">规则自学习闭环：人机差异持续反哺</div></div>
+    <div class="kpi"><div class="n" data-count="2" data-suffix=" 引擎">0</div><div class="l">规则引擎 + AI 引擎 双架构协同审核</div></div>
   </div>
-  <div class="flow" style="margin-top:2.5vh">
+  <div class="cmp" style="position:relative;margin-top:12px">
+    <div class="side old">
+      <h4>规则引擎 · 确定性规则</h4>
+      <p>判断逻辑明确的规则——「单笔超 5000 元需核实业务背景」「一线城市住宿 800 元/晚」</p>
+      <p style="color:var(--ink-3);font-size:11.5px">数值比较 + 逻辑表达式精确判定，不消耗 AI 点数，准确率更高</p>
+    </div>
+    <div class="side new">
+      <h4>AI 引擎 · 主观研判规则</h4>
+      <p>需语义理解和主观判断的复杂规则——AI 推理完成审核</p>
+      <p style="color:var(--gold-bright);font-size:11.5px;font-weight:600">消耗 AI 点数，适合「合理性」「风险性」类模糊判断</p>
+    </div>
+    <div class="vs">VS</div>
+  </div>
+  <div class="flow" style="margin-top:10px">
     <div class="fnode">
       <span class="step">① 解析制度</span>
       <h4>上传报销制度</h4>
@@ -452,8 +468,8 @@ td.hl{color:var(--gold-bright);font-weight:600}
     <div class="farrow">→</div>
     <div class="fnode">
       <span class="step">② 智能审核</span>
-      <h4>四维逐条审核</h4>
-      <p>合规 / 合理 / 风险 / 准确</p>
+      <h4>双引擎逐条审核</h4>
+      <p>确定规则走规则引擎，模糊判断走 AI 引擎</p>
     </div>
     <div class="farrow">→</div>
     <div class="fnode">
@@ -465,29 +481,15 @@ td.hl{color:var(--gold-bright);font-weight:600}
     <div class="fnode hot">
       <span class="step">④ 规则自进化</span>
       <h4>学习人机差异</h4>
-      <p>AI 审核 vs 人工复核差异 → 规则持续优化，准确率上升</p>
+      <p>AI 审核 vs 人工复核差异 → 规则持续优化</p>
     </div>
   </div>
-  <div class="lr" style="margin-top:12px">
-    <div class="left">
-      <div class="point"><h4>四维审核 · 逐条判定</h4><p>合规性（制度条款命中）/ 合理性（金额与业务逻辑）/ 风险性（敏感交易识别）/ 准确性（票据要素核对）——四个维度独立判定后综合出结论</p></div>
-      <div class="point"><h4>能力细节</h4><p>附件模板 3~5 份样本 AI 生成；AI 写扩展检查项插件免代码；AI 自动巡检过期 / 冲突 / 重复规则并历史回测</p></div>
-    </div>
-    <div class="fig" style="display:flex;align-items:center;justify-content:center">
-      <div style="text-align:center">
-        <div style="font-size:12px;color:var(--ink-3);margin-bottom:10px">审核环 AI 化层次跨越</div>
-        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
-          <div style="background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:8px;padding:6px 16px;font-size:12.5px;color:var(--gold-bright)">理解 · 读懂制度条款</div>
-          <div style="color:var(--gold-dark);font-size:13px">↓</div>
-          <div style="background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:8px;padding:6px 16px;font-size:12.5px;color:var(--gold-bright)">决策 · 四维逐条判定</div>
-          <div style="color:var(--gold-dark);font-size:13px">↓</div>
-          <div style="background:linear-gradient(135deg,#8C7326,#D4AF37);border-radius:8px;padding:6px 16px;font-size:12.5px;color:#12121A;font-weight:700">执行 · 结论反写源系统</div>
-        </div>
-        <div style="margin-top:10px;font-size:11.5px;color:var(--ink-3)">审核 = 唯一同时跨越三层的业务环</div>
-      </div>
-    </div>
+  <div class="bento" style="grid-auto-rows:auto;margin-top:10px">
+    <div class="bcard span-6"><div class="ico">🧩</div><h4>自定义规则 · 可视化配置</h4><p>可视化表达式编辑器：表达式模式（金额 > 5000）或条件组模式（图形化组合）；内置字段库（报销金额 / 费用类型 / 报销人）+ 公式函数库（IF / COALESCE）；沙箱测试验证规则正确性</p></div>
+    <div class="bcard span-6"><div class="ico">🔄</div><h4>能力细节</h4><p>附件模板 3~5 份样本 AI 生成；AI 写扩展检查项插件免代码；AI 自动巡检过期 / 冲突 / 重复规则并历史回测</p></div>
+    <div class="bcard span-12"><div class="ico">🔍</div><h4>四维审核 · 逐条判定</h4><p>合规性（制度条款命中）/ 合理性（金额与业务逻辑）/ 风险性（敏感交易识别）/ 准确性（票据要素核对）——规则引擎管确定项，AI 引擎管模糊项，四维独立判定后综合出审核结论</p></div>
   </div>
-  <div class="src">来源：金蝶社区 · 费用审核智能体 / 审核规则生成智能体</div>
+  <div class="src">来源：金蝶社区 · 费用审核智能体（双引擎架构 / 自定义规则 / 四维审核）</div>
 </section>
 
 <!-- S6 对账结账环 · AI 原生财务部 -->
@@ -517,16 +519,21 @@ td.hl{color:var(--gold-bright);font-weight:600}
     <div class="kpi"><div class="n" data-count="11" data-suffix="+4">0</div><div class="l">中枢层 11 个（干活）+ 价值层 4 个（判断）</div></div>
     <div class="kpi"><div class="n" data-count="24" data-suffix=" 小时">0</div><div class="l">全天候值守，无人月结不是口号</div></div>
   </div>
-  <div class="tbl-wrap" style="margin-top:12px">
-    <table>
-      <tr><th>层</th><th>智能体职责</th><th>替代的人工环节</th></tr>
+  <div class="tbl-wrap" style="margin-top:8px">
+    <table style="font-size:12px">
+      <tr><th style="padding:6px 12px">层</th><th>智能体职责</th><th>替代的人工环节</th></tr>
       <tr><td class="hl">中枢层 11</td><td>业务财务审核 / 对账与差异分析 / 核算记账 / 月结报表 / 税务管理</td><td>往来核对、凭证复核、月末结账、报表编制、纳税申报——日常高频重复劳动</td></tr>
       <tr><td class="hl">价值层 4</td><td>经营分析 / 预算管控 / 资金预测 / CFO 决策支持</td><td>经营月报解读、预算执行跟踪、现金流预测、决策材料准备——需要判断的工作</td></tr>
       <tr><td class="hl">治理层 1</td><td>CFO 驾驶舱：统一监控全部智能体运行状态</td><td>财务数字化全局调度——管"数字员工"的数字领导</td></tr>
     </table>
   </div>
-  <div class="concl gold">结账环 = 执行层的集大成：不只是「一个功能」，而是一个「编成建制的数字部门」</div>
-  <div class="src">来源：金蝶社区 · 灵基 AI 原生财务部</div>
+  <div class="bento" style="grid-auto-rows:auto;margin-top:8px;gap:8px">
+    <div class="bcard span-4" style="padding:9px 12px"><div class="ico">🗓️</div><h4>月结智能体</h4><p>进度查询（集团/个人双维度）→ 风险分析（两级判定，超 50% 组织自动升级）→ 报告自动生成（里程碑 / 时效趋势 / 优化建议）</p></div>
+    <div class="bcard span-4"><div class="ico">✅</div><h4>结账智能体</h4><p>总账 / 固定资产 / 出纳 / 存货核算四大业务域结账前检查，自然语言对话协调 + 进度监控 + 催办督办</p></div>
+    <div class="bcard span-4"><div class="ico">📑</div><h4>报表编制 + 经营分析</h4><p>三大财务报表端到端编制 + 勾稽检查 + 异常变动分析；经营分析数据穿透归因，从取数到分析报告全流程</p></div>
+  </div>
+  <div class="concl gold">结账环 = 执行层的集大成：月结从「事后追问」走向「主动掌控」——一个编成建制的数字部门</div>
+  <div class="src">来源：金蝶社区 · 灵基 AI 原生财务部 / 月结智能体 / 结账智能体 / 报表编制智能体</div>
 </section>
 
 <!-- S7 决策环 · 智能工作流 + 决策参谋 -->
@@ -554,22 +561,23 @@ td.hl{color:var(--gold-bright);font-weight:600}
   <div class="tbl-wrap" style="margin-top:12px">
     <table>
       <tr><th>能力</th><th>决策环怎么用</th><th>解决的人工痛点</th></tr>
-      <tr><td class="hl">场景化洞察配置</td><td>不同审批节点配置不同洞察方案——财务查合规、总经理看数据</td><td>审批人不知道"这笔该查什么"</td></tr>
-      <tr><td class="hl">决策参谋实时呈现</td><td>审批页侧边栏显示图表 / 关键指标 / AI 分析结论</td><td>要查数据得离开系统，审批被拖慢</td></tr>
-      <tr><td class="hl">指标问询</td><td>审批人直接用自然语言追问指标，AI 即时作答</td><td>静态报表答不了临时追问</td></tr>
+      <tr><td class="hl">场景化洞察配置</td><td>管理会计云 → 智能经营分析 → 场景分析方案，定义与单据关联的指标图表；工作流节点绑定方案后发布</td><td>审批人不知道"这笔该查什么"</td></tr>
+      <tr><td class="hl">决策参谋实时呈现</td><td>审批页右侧「数据决策参谋」页签：预算执行 / 报销金额历史统计 / 在途关联数据图表</td><td>要查数据得离开系统，审批被拖慢</td></tr>
+      <tr><td class="hl">AI 分析结论</td><td>每个图表由 AI 自动解读 + 风险洞察，输出结构化结论（如"本月预算执行率超 90%，需关注异常项目"）</td><td>图表给了，结论要自己读</td></tr>
+      <tr><td class="hl">指标问询</td><td>自然语言对话追问指标（如"上季度同类报销金额趋势"），AI 实时返回数据；支持多语言</td><td>静态报表答不了临时追问</td></tr>
     </table>
   </div>
   <div class="concl gold">审批决策从「凭经验」变成「看数据」——这是工作流 AI 化的分水岭</div>
-  <div class="src">来源：金蝶社区 · 苍穹工作流 × 智能数据洞察</div>
+  <div class="src">来源：金蝶社区 · 苍穹工作流 × 智能数据洞察（数据决策参谋）</div>
 </section>
 
 <!-- S8 生产侧 · 物料控制智能体 -->
-<section class="slide squeeze" id="s7">
+<section class="slide squeeze" id="s7" style="font-size:12.5px">
   <div class="eyebrow">业务链路 · 生产侧 · LEVEL 2-4</div>
   <h1 class="title">物料控制智能体：缺料不再靠喊</h1>
   <p class="lead">AI 化不止在财务环——制造侧的智能体把<b>工单级物料可用性</b>管了起来，从分析到补料一键完成。</p>
-  <div class="cmp" style="position:relative">
-    <div class="side old">
+  <div class="cmp" style="position:relative;margin-top:8px">
+    <div class="side old" style="padding:10px 14px">
       <h4>传统物控（MC）</h4>
       <p>物控员手工核对工单物料、逐单分析缺料、人工决策补料，周期长、易遗漏</p>
       <p style="color:var(--ink-3);font-size:12px">决策依赖个人经验，周期以天计</p>
@@ -582,20 +590,21 @@ td.hl{color:var(--gold-bright);font-weight:600}
     <div class="vs">VS</div>
   </div>
   <div class="bento" style="grid-auto-rows:auto;margin-top:10px">
-    <div class="bcard span-4"><div class="ico">📋</div><div class="big dim">工单级</div><div class="lbl">物料可用性管理</div><p style="margin-top:6px">不是全局库存报表，是精确到每个生产工单的物料可用性</p></div>
-    <div class="bcard span-4"><div class="ico">🔍</div><div class="big dim">根因</div><div class="lbl">自动识别</div><p style="margin-top:6px">自动定位缺料根因（BOM / 库存 / 采购在途）</p></div>
-    <div class="bcard span-4"><div class="ico">⚡</div><div class="big dim">一键</div><div class="lbl">生成补料单据</div><p style="margin-top:6px">采购申请 / 生产工单直接生成，决策到执行一步到位</p></div>
+    <div class="bcard span-4"><div class="ico">💬</div><div class="big dim">自然语言</div><div class="lbl">直接下指令</div><p style="margin-top:6px">「查一下 XX 工厂本周缺料」「分析 MO-20260101 的缺料」——说人话，智能体就执行</p></div>
+    <div class="bcard span-4"><div class="ico">📋</div><div class="big dim">可视化报告</div><div class="lbl">补料清单报告</div><p style="margin-top:6px">缺料工单数量 / 缺料物料种类 / 总缺口数量 + 建议生成单据数（采购申请 / 生产工单 / 委外工单）</p></div>
+    <div class="bcard span-4"><div class="ico">🔍</div><div class="big dim">根因四分类</div><div class="lbl">自动归类</div><p style="margin-top:6px">真实缺料 / 计划滞后 / 质量扣留 / 正常——缺料不再只看现象</p></div>
   </div>
-  <div class="tbl-wrap" style="margin-top:8px">
+  <div class="tbl-wrap" style="margin-top:10px">
     <table style="font-size:11.5px">
       <tr><th style="padding:6px 12px">环节</th><th>传统物控</th><th>物料控制智能体</th></tr>
       <tr><td class="hl" style="padding:5px 12px">缺料发现</td><td>物控员逐单手工核对工单物料</td><td>自动扫描全部在制工单，批量识别缺料</td></tr>
-      <tr><td class="hl">根因定位</td><td>靠经验猜测：库存？BOM？在途？</td><td>自动关联 BOM / 库存 / 采购在途，给出根因</td></tr>
-      <tr><td class="hl">补料执行</td><td>人工开采购申请，层层流转</td><td>一键生成补料单据，直达采购 / 生产</td></tr>
+      <tr><td class="hl">根因定位</td><td>靠经验猜测：库存？BOM？在途？</td><td>自动关联 BOM / 库存 / 采购在途，按四类归类根因</td></tr>
+      <tr><td class="hl">补料执行</td><td>人工开采购申请，层层流转</td><td>一键生成补料单据，直达采购 / 生产 / 委外</td></tr>
+      <tr><td class="hl">后续操作</td><td>信息滞后，追料靠催</td><td>直接补料 / 查看根因分析 / 换条件重新分析 三选一</td></tr>
     </table>
   </div>
   <div class="concl gold">生产侧证明：AI 化不是财务专属——理解、决策、执行在制造场景同样成立</div>
-  <div class="src">来源：金蝶社区 · 物料控制智能体</div>
+  <div class="src">来源：金蝶社区 · 物料控制智能体（自然语言指令 / 缺料分析报告）</div>
 </section>
 
 <!-- S9 三个共性 -->
@@ -636,22 +645,32 @@ td.hl{color:var(--gold-bright);font-weight:600}
 </section>
 
 <!-- S11 回到交付现场 -->
-<section class="slide squeeze" id="s10">
+<section class="slide squeeze" id="s10" style="font-size:13px">
   <div class="eyebrow">一线呼应 · BACK TO THE FIELD</div>
   <h1 class="title">这些能力，正是交付现场的第一手观察</h1>
   <p class="lead">以上不是产品宣传册——是我们在真实交付中验证过、客户追问过的能力。</p>
-  <div class="kpis" style="margin-top:14px">
-    <div class="kpi"><div class="n" data-count="103">0</div><div class="l">条审批流程 · 格林沃德财务共享</div></div>
+  <div class="kpis" style="margin-top:10px">
+    <div class="kpi" style="padding:9px 14px"><div class="n" data-count="103">0</div><div class="l">条审批流程 · 格林沃德财务共享</div></div>
     <div class="kpi"><div class="n" data-count="17">0</div><div class="l">个模块 · 慧镕生产制造</div></div>
     <div class="kpi"><div class="n" data-count="2" data-suffix=" 天">0</div><div class="l">手册交付周期（AI 工具链）</div></div>
     <div class="kpi"><div class="n" data-count="200" data-suffix="+">0</div><div class="l">知识库条目沉淀</div></div>
   </div>
-  <div class="bento" style="grid-auto-rows:auto;margin-top:12px">
-    <div class="bcard span-6"><div class="ico">🏗️</div><h4>格林沃德 · 财务共享</h4><p>费控 + 总账 + 出纳三大模块、103 条审批流程——交付中客户第一问就是「凭证自动化率能到多少」，智能会计平台的度量能力恰好接住</p><p style="margin-top:6px;font-size:12px;color:var(--ink-3)">印证：S4 记账环 · 自动化率度量</p></div>
+  <div class="bento" style="grid-auto-rows:auto;margin-top:8px;gap:7px">
+    <div class="bcard span-6" style="padding:9px 12px"><div class="ico">🏗️</div><h4>格林沃德 · 财务共享</h4><p>费控 + 总账 + 出纳三大模块、103 条审批流程——交付中客户第一问就是「凭证自动化率能到多少」，智能会计平台的度量能力恰好接住</p><p style="margin-top:6px;font-size:12px;color:var(--ink-3)">印证：S4 记账环 · 自动化率度量</p></div>
     <div class="bcard span-6"><div class="ico">🏭</div><h4>慧镕科技 · 生产制造</h4><p>MRP + 生产 + 采购 + 销售 + 成本 17 模块——交付中客户最关心物料可控，物料控制智能体正是制造侧 AI 的直接答案</p><p style="margin-top:6px;font-size:12px;color:var(--ink-3)">印证：S8 生产侧 · 物料控制</p></div>
     <div class="bcard span-12"><div class="ico">🧰</div><h4>一线工具链的验证</h4><p>我们用 AI 工具链做交付：手册 2 天/家、流程清洗半自动、OpenMAIC 课堂、知识库 200+ 篇——「AI 落进 ERP」的完整答案 = 产品 AI 能力 + 一线 AI 交付</p></div>
   </div>
+  <div class="tbl-wrap" style="margin-top:10px">
+    <table style="font-size:11px">
+      <tr><th style="padding:5px 10px">财务共享智能场景</th><th>对应能力</th><th>交付现场的相关性</th></tr>
+      <tr><td class="hl">费用及报销全流程</td><td>申请 → 审批 → 支付自动化</td><td>格林沃德费控模块 = 该类场景落地</td></tr>
+      <tr><td class="hl">智能化资金管理</td><td>资金结算 / 计划 / 票据管理</td><td>出纳模块的 AI 化延伸</td></tr>
+      <tr><td class="hl">集团智慧月结</td><td>月结智能体 / 跨组织进度监控</td><td>月结提速是财务负责人核心诉求</td></tr>
+      <tr><td class="hl">跨数据中心合并报表</td><td>多组织上报 / 抵销 / 合并</td><td>集团型企业客户的高频追问</td></tr>
+      </table>
+  </div>
   <div class="concl gold">产品在 AI 化，交付也在 AI 化——两条线在同一现场交汇</div>
+  <div class="src">来源：金蝶社区 · 金蝶AI产品特性应用实践案例合集（财务共享场景）</div>
 </section>
 
 <!-- S12 结语 -->
@@ -813,6 +832,33 @@ function spawnParticles(){
   }
 }
 spawnParticles();
+/* ============ 交互粒子特效 ============ */
+function burstParticles(x,y,n){
+  const layer=document.getElementById('fx-layer');
+  if(!layer)return;
+  for(let i=0;i<n;i++){
+    const p=document.createElement('div');
+    const size=2+Math.random()*4;
+    const ang=Math.random()*Math.PI*2;
+    const dist=40+Math.random()*90;
+    const dx=Math.cos(ang)*dist, dy=Math.sin(ang)*dist;
+    p.style.cssText=`position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${Math.random()>0.3?'#D4AF37':'#F0D98C'};box-shadow:0 0 8px rgba(212,175,55,.8)`;
+    layer.appendChild(p);
+    gsap.to(p,{x:dx,y:dy,opacity:0,scale:Math.random()>0.5?1.6:0.4,duration:0.7+Math.random()*0.6,ease:'power2.out',
+      onComplete:()=>p.remove()});
+  }
+}
+// 点击任意位置爆发粒子（避开导航按钮）
+document.addEventListener('click',e=>{
+  if(e.target.closest('button')||e.target.closest('#nav-top')||e.target.closest('#nav-bottom'))return;
+  burstParticles(e.clientX,e.clientY,14);
+});
+// 键盘翻页时在屏幕中心爆发
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key===' '||e.key==='PageDown'||e.key==='PageUp'){
+    burstParticles(window.innerWidth/2,window.innerHeight/2,10);
+  }
+});
 /* ============ SVG 图表引擎 ============ */
 function el(tag,attrs,parent){
   const n=document.createElementNS('http://www.w3.org/2000/svg',tag);
