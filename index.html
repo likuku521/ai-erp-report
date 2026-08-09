@@ -940,65 +940,7 @@ function spawnParticles(){
 }
 spawnParticles();
 /* ============ 交互粒子特效 ============ */
-const FX_COLORS=['#D4AF37','#F0D98C','#FFE9A8','#B8960C','#8A6D1B','#FFF5D1'];
-function burstParticles(x,y,n,direction='center'){
-  const layer=document.getElementById('fx-layer');
-  if(!layer)return;
-  // 方向扇形：next 向右，prev 向左，click/center 全向
-  let baseAng=0, angRange=Math.PI*2;
-  if(direction==='next'){ baseAng=-Math.PI/3; angRange=Math.PI*2/3; }
-  else if(direction==='prev'){ baseAng=Math.PI*2/3; angRange=Math.PI*2/3; }
-  for(let i=0;i<n;i++){
-    const p=document.createElement('div');
-    const size=2+Math.random()*5;
-    const ang=baseAng+Math.random()*angRange+(Math.random()-0.5)*0.25;
-    const dist=60+Math.random()*140;
-    const dx=Math.cos(ang)*dist, dy=Math.sin(ang)*dist;
-    const color=FX_COLORS[Math.floor(Math.random()*FX_COLORS.length)];
-    p.style.cssText=`position:absolute;left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:50%;background:${color};box-shadow:0 0 ${size*2.5}px ${color};pointer-events:none`;
-    layer.appendChild(p);
-    const dur=0.7+Math.random()*0.7;
-    gsap.fromTo(p,{x:0,y:0,opacity:1,scale:1},
-      {x:dx,y:dy+(Math.random()-0.5)*30,opacity:0,scale:Math.random()>0.5?1.8:0.2,duration:dur,ease:'power2.out',
-       onComplete:()=>p.remove()});
-    // 拖尾粒子
-    if(Math.random()>0.35){
-      for(let t=0;t<2;t++){
-        const tp=document.createElement('div');
-        const ts=1+Math.random()*2;
-        tp.style.cssText=`position:absolute;left:${x}px;top:${y}px;width:${ts}px;height:${ts}px;border-radius:50%;background:${color};pointer-events:none`;
-        layer.appendChild(tp);
-        gsap.to(tp,{x:dx*(0.45+Math.random()*0.35),y:dy*(0.45+Math.random()*0.35),opacity:0,scale:0,
-          duration:dur*(0.5+Math.random()*0.35),delay:0.04+t*0.05,ease:'power1.out',onComplete:()=>tp.remove()});
-      }
-    }
-  }
-}
-function sweepFlash(direction='next'){
-  const layer=document.getElementById('fx-layer');
-  if(!layer)return;
-  const bar=document.createElement('div');
-  const W=Math.max(window.innerWidth,window.innerHeight)*1.6;
-  const deg=direction==='next'?12:-12;
-  bar.style.cssText=`position:fixed;top:-30%;left:-30%;width:${W}px;height:160%;background:linear-gradient(${direction==='next'?90:270}deg,transparent 0%,rgba(212,175,55,0.10) 42%,rgba(212,175,55,0.28) 50%,rgba(212,175,55,0.10) 58%,transparent 100%);pointer-events:none;transform:rotate(${deg}deg)`;
-  layer.appendChild(bar);
-  gsap.fromTo(bar,{x:direction==='next'?-W:W,opacity:0},{x:direction==='next'?W:-W,opacity:1,duration:0.55,ease:'power2.inOut',onComplete:()=>bar.remove()});
-}
-// 点击任意位置爆发粒子（避开导航按钮）
-document.addEventListener('click',e=>{
-  if(e.target.closest('button')||e.target.closest('#nav-top')||e.target.closest('#nav-bottom'))return;
-  burstParticles(e.clientX,e.clientY,16,'click');
-});
-// 键盘翻页：下一页向右爆发+扫光，上一页向左爆发+扫光
-document.addEventListener('keydown',e=>{
-  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){
-    sweepFlash('next');
-    setTimeout(()=>burstParticles(window.innerWidth/2,window.innerHeight/2,26,'next'),30);
-  } else if(e.key==='ArrowLeft'||e.key==='PageUp'){
-    sweepFlash('prev');
-    setTimeout(()=>burstParticles(window.innerWidth/2,window.innerHeight/2,26,'prev'),30);
-  }
-});
+/* 翻页/点击粒子已按用户要求移除，仅保留背景常驻粒子（spawnParticles） */
 /* ============ SVG 图表引擎 ============ */
 function el(tag,attrs,parent){
   const n=document.createElementNS('http://www.w3.org/2000/svg',tag);
