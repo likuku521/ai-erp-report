@@ -390,7 +390,7 @@ td.hl{color:var(--gold-bright);font-weight:600}
   <button data-goto="3">业务链路</button>
   <button data-goto="8">三个共性</button>
   <button data-goto="10">交付现场</button>
-  <button data-goto="11">结语</button>
+  <button data-goto="12">结语</button>
   <span class="spacer"></span>
   <button class="fs-btn" onclick="toggleFS()">⛶</button>
 </nav>
@@ -771,8 +771,44 @@ td.hl{color:var(--gold-bright);font-weight:600}
   <div class="src">来源：金蝶社区 · 金蝶AI产品特性应用实践案例合集（财务共享场景）</div>
 </section>
 
-<!-- S12 结语 -->
-<section class="slide quote" id="s11">
+<!-- S12 我的输入输出与产品场景 -->
+<section class="slide squeeze" id="s11" style="font-size:13px">
+  <div class="eyebrow">人机协作 · MY AI TOOLCHAIN</div>
+  <h1 class="title">我的输入输出：<span class="hl">人喂料，AI 干活，交付提速</span></h1>
+  <p class="lead">一线交付不是「人做一切」，也不是「AI 全自动」——是人和 AI 分工：客户资料进，交付物出。</p>
+  <div class="flow" style="margin-top:14px">
+    <div class="fnode" style="flex:0.9">
+      <span class="step">我的输入</span>
+      <h4>客户原始资料</h4>
+      <p>授权手册 Excel<br>蓝图 / 流程文档<br>操作手册 DOCX · 截图录屏</p>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode hot" style="flex:1.15">
+      <span class="step">AI 工具链处理</span>
+      <h4>清洗 → 建模 → 生成</h4>
+      <p>流程清洗半自动<br>模板映射 · 角色化重构<br>经验沉淀 → 复用</p>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fnode" style="flex:0.95">
+      <span class="step">我的输出</span>
+      <h4>可交付成果</h4>
+      <p>审批工作流方案<br>操作手册网站<br>知识库 · 课堂 / 汇报</p>
+    </div>
+  </div>
+  <div class="tbl-wrap" style="margin-top:14px">
+    <table style="font-size:11.5px">
+      <tr><th style="padding:6px 12px">我做出的产品 / 工具</th><th>适用场景</th><th>匹配的金蝶 AI 能力场景</th></tr>
+      <tr><td class="hl">审批工作流设计器</td><td>授权手册矩阵 → 103 条流程可视化落地</td><td>智能审批：规则引擎 + 条件分支的落地载体</td></tr>
+      <tr><td class="hl">操作手册网站生成器</td><td>手册 2 天/家，角色化（操作/财务/领导）交付</td><td>智能工作流 / 智能体上线后的岗位配套</td></tr>
+      <tr><td class="hl">知识库 · 经验沉淀</td><td>200+ 条交付经验沉淀，新人可复用</td><td>与智能问答互补——人脑经验 + AI 知识双源</td></tr>
+      <tr><td class="hl">OpenMAIC 课堂 / 汇报生成</td><td>客户培训、向领导汇报 AI 化成果</td><td>把智能体能力讲清楚，让客户「看得见」</td></tr>
+    </table>
+  </div>
+  <div class="concl gold">产品提供 AI 能力，我们提供把它用起来的方式——这就是一线 AI 交付的闭环</div>
+</section>
+
+<!-- S13 结语 -->
+<section class="slide quote" id="s12">
   <div class="qmark">”</div>
   <div class="eyebrow">结语 · CONCLUSION</div>
   <div class="qmain">产品 AI 化已经走到「<span class="qhl">数字员工上岗</span>」这一步</div>
@@ -836,7 +872,7 @@ function go(i){
   animateIn(slides[i]);
 }
 document.querySelectorAll('#nav-top button[data-goto]').forEach(b=>{
-  b.dataset.goto2=+b.dataset.goto+(b.textContent==='平台底座'?1:b.textContent==='业务链路'?5:b.textContent==='三个共性'?2:b.textContent==='交付现场'?1:2);
+  b.dataset.goto2=+b.dataset.goto+(b.textContent==='平台底座'?1:b.textContent==='业务链路'?5:b.textContent==='三个共性'?2:b.textContent==='交付现场'?2:2);
   b.addEventListener('click',()=>go(+b.dataset.goto));
 });
 document.addEventListener('keydown',e=>{
